@@ -9,7 +9,26 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
+        TabView {
+            Text("Stories")
+                .tabItem {
+                    Label("Stories", systemImage: "newspaper")
+                }
+
+            Text("Search")
+                .tabItem {
+                    Label("Search", systemImage: "magnifyingglass")
+                }
+
+            Text("Profile")
+                .tabItem {
+                    Label("Profile", systemImage: "person")
+                }
+
+            Text("Settings")
+                .tabItem {
+                    Label("Settings", systemImage: "gear")
+                }
         }
     }
 }
