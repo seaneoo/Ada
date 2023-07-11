@@ -10,7 +10,7 @@ import Foundation
 struct Item: Codable, Identifiable {
     var id: Int // the item's unique id
     var deleted: Bool? // true, if the item is deleted
-    var type: String? // the type of the item (job, story, comment, poll, or pollopt)
+    var type: ItemType? // the type of the item (job, story, comment, poll, or pollopt)
     var by: String? // the username of the item's author
     var time: Int? // the creation date and time of the item, in Unix time
     var text: String? // the comment, story, or poll text (HTML)
@@ -23,6 +23,11 @@ struct Item: Codable, Identifiable {
     var title: String? // the title of the story, poll, or job (HTML)
     var parts: [Int]? // a list of related pollopts
     var descendants: Int? // the total comment count
+}
+
+// The type of item. One of "job", "story", "comment", "poll", or "pollopt".
+enum ItemType: String, Codable {
+    case job, story, comment, poll, pollopt
 }
 
 extension Item: Equatable {
