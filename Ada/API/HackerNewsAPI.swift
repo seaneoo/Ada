@@ -33,4 +33,13 @@ class HackerNewsAPI {
             throw HackerNewsAPIError.fetching(error: error.localizedDescription)
         }
     }
+
+    func getUser(from id: String) async throws -> User {
+        do {
+            let data = try await service.perform(for: User.self, from: "https://hacker-news.firebaseio.com/v0/user/\(id).json")
+            return data
+        } catch {
+            throw HackerNewsAPIError.fetching(error: error.localizedDescription)
+        }
+    }
 }
