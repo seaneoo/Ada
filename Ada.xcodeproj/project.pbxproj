@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14456FDE2A5E14C900B3346B /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14456FDD2A5E14C900B3346B /* Date.swift */; };
 		148FC66C2A5C79070049C211 /* AdaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148FC66B2A5C79070049C211 /* AdaApp.swift */; };
 		148FC66E2A5C79070049C211 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148FC66D2A5C79070049C211 /* ContentView.swift */; };
 		148FC6702A5C79080049C211 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 148FC66F2A5C79080049C211 /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		14456FDD2A5E14C900B3346B /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		148FC6682A5C79070049C211 /* Ada.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ada.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		148FC66B2A5C79070049C211 /* AdaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaApp.swift; sourceTree = "<group>"; };
 		148FC66D2A5C79070049C211 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -42,6 +44,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		14456FDC2A5E14BB00B3346B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				14456FDD2A5E14C900B3346B /* Date.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		148FC65F2A5C79070049C211 = {
 			isa = PBXGroup;
 			children = (
@@ -61,6 +71,7 @@
 		148FC66A2A5C79070049C211 /* Ada */ = {
 			isa = PBXGroup;
 			children = (
+				14456FDC2A5E14BB00B3346B /* Extensions */,
 				14BC53042A5CAFF00057CFB7 /* API */,
 				14AB5B832A5CA27400041625 /* Views */,
 				148FC66B2A5C79070049C211 /* AdaApp.swift */,
@@ -179,6 +190,7 @@
 				14BC53122A5CC8EE0057CFB7 /* HackerNewsAPI.swift in Sources */,
 				148FC66E2A5C79070049C211 /* ContentView.swift in Sources */,
 				148FC66C2A5C79070049C211 /* AdaApp.swift in Sources */,
+				14456FDE2A5E14C900B3346B /* Date.swift in Sources */,
 				14BC53102A5CC3750057CFB7 /* User.swift in Sources */,
 				14BC53082A5CB09C0057CFB7 /* APIService.swift in Sources */,
 				14AB5B852A5CA27E00041625 /* StoriesView.swift in Sources */,
