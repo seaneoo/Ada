@@ -8,13 +8,23 @@
 import Foundation
 
 @MainActor class StoriesViewModel: ObservableObject {
-    @Published public var storyIds: [Int]?
+    @Published public var stories: [Int]?
+    @Published public var error: Error?
 
-    func fetchStories() async {
-        do {
-            storyIds = try await HackerNewsAPI.shared.getStories()
-        } catch {
-            print(error.localizedDescription)
+    func fetchStories() {
+        HackerNewsAPI.shared.getStories { [weak self] result in
+            switch result {
+            case let .success(stories):
+                DispatchQueue.main.async {
+                    self?.stories = Array(stories.prefix(20))
+                    self?.error = nil
+                }
+            case let .failure(error):
+                DispatchQueue.main.async {
+                    self?.stories = nil
+                    self?.error = error
+                }
+            }
         }
     }
 }

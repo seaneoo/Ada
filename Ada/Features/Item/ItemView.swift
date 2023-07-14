@@ -22,7 +22,7 @@ struct ItemView: View {
                 ProgressView()
             }
         }.task {
-            await vm.fetchItem(id: id)
+            vm.fetchItem(id: id)
         }
     }
 }

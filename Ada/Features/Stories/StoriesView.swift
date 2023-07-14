@@ -14,9 +14,9 @@ struct StoriesView: View {
     var body: some View {
         NavigationStack {
             List {
-                if let storyIds = vm.storyIds {
-                    ForEach(storyIds, id: \.self) { i in
-                        ItemView(id: i)
+                if let stories = vm.stories {
+                    ForEach(stories, id: \.self) { id in
+                        ItemView(id: id)
                     }
                 }
             }
@@ -24,7 +24,7 @@ struct StoriesView: View {
             .listStyle(.plain)
         }
         .task {
-            await vm.fetchStories()
+            vm.fetchStories()
         }
     }
 }
