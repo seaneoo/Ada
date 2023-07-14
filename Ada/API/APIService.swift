@@ -22,22 +22,31 @@ class APIService {
         self.decoder = decoder
     }
 
-    func perform<T: Decodable>(for: T.Type, from string: String) async throws -> T {
+    func perform<T: Decodable>(for: T.Type, from string: String, completion: @escaping (Result<T, Error>) -> Void) {
         guard let url = URL(string: string) else {
-            throw APIServiceError.url(error: "")
+            completion(.failure(APIServiceError.url(error: "Malformed URL (URL=\(string))")))
+            return
         }
 
-        let (data, response) = try await session.data(from: url)
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            guard let response = response as? HTTPURLResponse, (200 ... 299).contains(response.statusCode) else {
+                completion(.failure(APIServiceError.response(error: "Invalid response status code")))
+                return
+            }
 
-        guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-            throw APIServiceError.response(error: "")
-        }
+            if let error = error {
+                completion(.failure(APIServiceError.response(error: error.localizedDescription)))
+            }
 
-        do {
-            decoder.keyDecodingStrategy = .convertFromSnakeCase
-            return try decoder.decode(T.self, from: data)
-        } catch {
-            throw APIServiceError.decoding(error: error.localizedDescription)
-        }
+            if let data = data {
+                do {
+                    self.decoder.keyDecodingStrategy = .convertFromSnakeCase
+                    let decoded = try self.decoder.decode(T.self, from: data)
+                    completion(.success(decoded))
+                } catch {
+                    completion(.failure(APIServiceError.decoding(error: error.localizedDescription)))
+                }
+            }
+        }.resume()
     }
 }

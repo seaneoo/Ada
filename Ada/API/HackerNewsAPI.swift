@@ -16,30 +16,20 @@ class HackerNewsAPI {
 
     private var service = APIService()
 
-    func getStories() async throws -> [Int] {
-        do {
-            let data = try await service.perform(for: [Int].self, from: "https://hacker-news.firebaseio.com/v0/topstories.json")
-            return Array(data.prefix(20)) // TODO: limit the number of IDs to load while developing
-        } catch {
-            throw HackerNewsAPIError.fetching(error: error.localizedDescription)
-        }
+    typealias Completion<T> = (Result<T, Error>) -> Void
+
+    func getStories(completion: @escaping Completion<[Int]>) {
+        let url = "https://hacker-news.firebaseio.com/v0/topstories.json"
+        service.perform(for: [Int].self, from: url, completion: completion)
     }
 
-    func getItem(from id: Int) async throws -> Item {
-        do {
-            let data = try await service.perform(for: Item.self, from: "https://hacker-news.firebaseio.com/v0/item/\(id).json")
-            return data
-        } catch {
-            throw HackerNewsAPIError.fetching(error: error.localizedDescription)
-        }
+    func getItem(from id: Int, completion: @escaping Completion<Item>) {
+        let url = "https://hacker-news.firebaseio.com/v0/item/\(id).json"
+        service.perform(for: Item.self, from: url, completion: completion)
     }
 
-    func getUser(from id: String) async throws -> User {
-        do {
-            let data = try await service.perform(for: User.self, from: "https://hacker-news.firebaseio.com/v0/user/\(id).json")
-            return data
-        } catch {
-            throw HackerNewsAPIError.fetching(error: error.localizedDescription)
-        }
+    func getUser(from id: String, completion: @escaping Completion<User>) {
+        let url = "https://hacker-news.firebaseio.com/v0/user/\(id).json"
+        service.perform(for: User.self, from: url, completion: completion)
     }
 }
