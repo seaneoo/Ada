@@ -16,7 +16,7 @@ struct StoriesView: View {
             List {
                 if let storyIds = vm.storyIds {
                     ForEach(storyIds, id: \.self) { i in
-                        Text("\(String(i))")
+                        ItemView(id: i)
                     }
                 }
             }
