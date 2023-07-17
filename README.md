@@ -22,6 +22,7 @@ This project is primarily a learning experience for me. I have always wanted to 
 
 ### Open Source Packages
 
+- [AlertToast](https://github.com/elai950/AlertToast)
 - [CachedAsyncImage](https://github.com/lorenzofiamingo/swiftui-cached-async-image)
 
 ## Contributing
