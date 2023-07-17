@@ -13,11 +13,28 @@ struct ItemView: View {
     @StateObject private var vm = ItemViewModel()
 
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: 10) {
             if let item = vm.item {
-                Text(item.title ?? "nil")
-                    .font(.title2)
-                Text("by \(item.by ?? "nil")")
+                if let url = URL(string: item.url ?? "") {
+                    HStack {
+                        Rectangle().frame(width: 15, height: 15)
+                            .foregroundColor(.gray)
+
+                        Text(url.host() ?? "error_no_host")
+                            .font(.footnote)
+                    }
+                }
+
+                if let title = item.title {
+                    Text(title)
+                        .font(.headline)
+                }
+
+                HStack {
+                    if let by = item.by { Text("by \(by)") }
+                    Text("•")
+                    if let time = item.time { Text("\(Date().fromUnix(from: time).getRelativeTime(from: Date()))") }
+                }
             } else {
                 ProgressView()
             }
