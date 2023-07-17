@@ -18,6 +18,12 @@ There are *a lot* of Hacker News apps on the App Store. Despite this, I decided 
 
 This project is primarily a learning experience for me. I have always wanted to build iOS apps and this felt like a great opportunity to learn. However, I also want to build an app that people can use and enjoy. 
 
+## Acknowledgments
+
+### Open Source Packages
+
+- [CachedAsyncImage](https://github.com/lorenzofiamingo/swiftui-cached-async-image)
+
 ## Contributing
 
 Contributions are always appreciated. If you have an idea on how to improve something or there is a feature I missed, by all means I am open to the help! 
