@@ -5,6 +5,7 @@
 //  Created by Sean O'Connor on 7/13/23.
 //
 
+import CachedAsyncImage
 import SwiftUI
 
 struct ItemView: View {
@@ -17,7 +18,7 @@ struct ItemView: View {
             if let item = vm.item {
                 if let url = URL(string: item.url ?? "") {
                     HStack {
-                        AsyncImage(url: URL(string: "https://www.google.com/s2/favicons?domain=\(url.host() ?? "")"))
+                        CachedAsyncImage(url: URL(string: "https://www.google.com/s2/favicons?domain=\(url.host() ?? "")"))
                             .frame(width: 15, height: 15)
 
                         Text(url.host() ?? "error_no_host")
