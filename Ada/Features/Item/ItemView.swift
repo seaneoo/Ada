@@ -17,8 +17,8 @@ struct ItemView: View {
             if let item = vm.item {
                 if let url = URL(string: item.url ?? "") {
                     HStack {
-                        Rectangle().frame(width: 15, height: 15)
-                            .foregroundColor(.gray)
+                        AsyncImage(url: URL(string: "https://www.google.com/s2/favicons?domain=\(url.host() ?? "")"))
+                            .frame(width: 15, height: 15)
 
                         Text(url.host() ?? "error_no_host")
                             .font(.footnote)
