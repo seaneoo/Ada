@@ -10,6 +10,8 @@ import SwiftUI
 struct ItemActionsView: View {
     var item: Item?
 
+    @EnvironmentObject var state: AppState
+
     var body: some View {
         HStack(spacing: 20) {
             if let item = item {
@@ -28,10 +30,17 @@ struct ItemActionsView: View {
                 }
 
                 if let time = item.time {
-                    HStack {
-                        Image(systemName: "clock")
-                        Text("\(Date().fromUnix(from: time).getRelativeTime(from: Date()))")
+                    Button {
+                        state.toastText = Date().fromUnix(from: time).format()
+                        state.isShowingToast = true
+                    } label: {
+                        HStack {
+                            Image(systemName: "clock")
+                            Text("\(Date().fromUnix(from: time).getRelativeTime(from: Date()))")
+                        }
                     }
+                    .foregroundColor(.primary)
+                    .buttonStyle(.plain)
                 }
             }
         }

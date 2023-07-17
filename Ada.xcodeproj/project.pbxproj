@@ -12,6 +12,8 @@
 		14456FE22A5E1E9A00B3346B /* StoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14456FE12A5E1E9A00B3346B /* StoriesView.swift */; };
 		14456FE62A5E1EDC00B3346B /* StoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14456FE52A5E1EDC00B3346B /* StoriesViewModel.swift */; };
 		144F3A012A65FBBD00B60152 /* CachedAsyncImage in Frameworks */ = {isa = PBXBuildFile; productRef = 144F3A002A65FBBD00B60152 /* CachedAsyncImage */; };
+		144F3A072A66001C00B60152 /* AlertToast in Frameworks */ = {isa = PBXBuildFile; productRef = 144F3A062A66001C00B60152 /* AlertToast */; };
+		144F3A092A66003400B60152 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144F3A082A66003400B60152 /* AppState.swift */; };
 		1485CE552A60C60500A4EFF9 /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1485CE542A60C60500A4EFF9 /* ItemView.swift */; };
 		1485CE582A60C62400A4EFF9 /* ItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1485CE572A60C62400A4EFF9 /* ItemViewModel.swift */; };
 		148FC66C2A5C79070049C211 /* AdaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148FC66B2A5C79070049C211 /* AdaApp.swift */; };
@@ -30,6 +32,7 @@
 		14456FDD2A5E14C900B3346B /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		14456FE12A5E1E9A00B3346B /* StoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesView.swift; sourceTree = "<group>"; };
 		14456FE52A5E1EDC00B3346B /* StoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesViewModel.swift; sourceTree = "<group>"; };
+		144F3A082A66003400B60152 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		1485CE542A60C60500A4EFF9 /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
 		1485CE572A60C62400A4EFF9 /* ItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewModel.swift; sourceTree = "<group>"; };
 		148FC6682A5C79070049C211 /* Ada.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ada.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,6 +53,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				144F3A012A65FBBD00B60152 /* CachedAsyncImage in Frameworks */,
+				144F3A072A66001C00B60152 /* AlertToast in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +123,7 @@
 				148FC66D2A5C79070049C211 /* ContentView.swift */,
 				148FC66F2A5C79080049C211 /* Assets.xcassets */,
 				148FC6712A5C79080049C211 /* Preview Content */,
+				144F3A082A66003400B60152 /* AppState.swift */,
 			);
 			path = Ada;
 			sourceTree = "<group>";
@@ -168,6 +173,7 @@
 			name = Ada;
 			packageProductDependencies = (
 				144F3A002A65FBBD00B60152 /* CachedAsyncImage */,
+				144F3A062A66001C00B60152 /* AlertToast */,
 			);
 			productName = Ada;
 			productReference = 148FC6682A5C79070049C211 /* Ada.app */;
@@ -199,6 +205,7 @@
 			mainGroup = 148FC65F2A5C79070049C211;
 			packageReferences = (
 				144F39FF2A65FBBD00B60152 /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */,
+				144F3A052A66001C00B60152 /* XCRemoteSwiftPackageReference "AlertToast" */,
 			);
 			productRefGroup = 148FC6692A5C79070049C211 /* Products */;
 			projectDirPath = "";
@@ -235,6 +242,7 @@
 				148FC66C2A5C79070049C211 /* AdaApp.swift in Sources */,
 				14456FDE2A5E14C900B3346B /* Date.swift in Sources */,
 				14BC53102A5CC3750057CFB7 /* User.swift in Sources */,
+				144F3A092A66003400B60152 /* AppState.swift in Sources */,
 				14BC53082A5CB09C0057CFB7 /* APIService.swift in Sources */,
 				1485CE582A60C62400A4EFF9 /* ItemViewModel.swift in Sources */,
 				14BC530C2A5CB6610057CFB7 /* Item.swift in Sources */,
@@ -455,6 +463,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		144F3A052A66001C00B60152 /* XCRemoteSwiftPackageReference "AlertToast" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/elai950/AlertToast.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -462,6 +478,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 144F39FF2A65FBBD00B60152 /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */;
 			productName = CachedAsyncImage;
+		};
+		144F3A062A66001C00B60152 /* AlertToast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 144F3A052A66001C00B60152 /* XCRemoteSwiftPackageReference "AlertToast" */;
+			productName = AlertToast;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
