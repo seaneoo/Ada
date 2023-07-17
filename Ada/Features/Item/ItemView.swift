@@ -30,11 +30,14 @@ struct ItemView: View {
                         .font(.headline)
                 }
 
-                HStack {
-                    if let by = item.by { Text("by \(by)") }
-                    Text("•")
-                    if let time = item.time { Text("\(Date().fromUnix(from: time).getRelativeTime(from: Date()))") }
+                if let by = item.by {
+                    HStack {
+                        Image(systemName: "person.circle")
+                        Text(by)
+                    }
                 }
+
+                ItemActionsView(item: item)
             } else {
                 ProgressView()
             }
