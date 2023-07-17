@@ -21,7 +21,7 @@ extension Date {
 
     func getRelativeTime(from date: Date) -> String {
         let relativeDateFormatter = RelativeDateTimeFormatter()
-        relativeDateFormatter.unitsStyle = .full
+        relativeDateFormatter.unitsStyle = .short
         let value = String(relativeDateFormatter.localizedString(for: self, relativeTo: date))
         return value.hasPrefix("in") ? "now" : value
     }
