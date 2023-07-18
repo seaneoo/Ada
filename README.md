@@ -1,6 +1,22 @@
-# Ada
+<p align="center">
+  <a href="https://github.com/seaneoo/Ada">
+    <img src="static/gh-repo-banner.png" alt="Ada Logo">
+  </a>
+</p>
 
-An Apple-esque Hacker News client for iOS, iPadOS, and macOS.
+<p align="center">
+  An Apple-esque Hacker News client for iOS, iPadOS, and macOS.
+
+  <br/>
+  <br/>
+  
+  <a href="https://github.com/seaneoo/Ada">
+    <img src="https://img.shields.io/github/last-commit/seaneoo/Ada.svg" alt="License">
+  </a>
+  <a href="https://github.com/seaneoo/Ada/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/seaneoo/Ada.svg" alt="License">
+  </a>
+</p>
 
 ## About
 
