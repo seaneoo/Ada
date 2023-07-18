@@ -23,6 +23,7 @@ extension Date {
         let relativeDateFormatter = RelativeDateTimeFormatter()
         relativeDateFormatter.unitsStyle = .short
         let value = String(relativeDateFormatter.localizedString(for: self, relativeTo: date))
-        return value.hasPrefix("in") ? "now" : value
+        let str = value.hasPrefix("in") ? "now" : value
+        return String(str.replacingOccurrences(of: ".", with: "").dropLast(4))
     }
 }
