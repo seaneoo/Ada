@@ -28,7 +28,7 @@ struct UserView: View {
             List {
                 Label("\(user.karma)", systemImage: "arrow.up")
 
-                Label("\(Date().fromUnix(from: user.created).format(showTime: false))", systemImage: "calendar")
+                Label("\(Date.fromUnix(from: user.created).format(timeStyle: .none))", systemImage: "calendar")
 
                 NavigationLink {
                     UserSubmissionsView(user: user)

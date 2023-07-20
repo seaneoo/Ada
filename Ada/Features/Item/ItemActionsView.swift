@@ -31,12 +31,12 @@ struct ItemActionsView: View {
 
                 if let time = item.time {
                     Button {
-                        state.toastText = Date().fromUnix(from: time).format()
+                        state.toastText = Date.fromUnix(from: time).format()
                         state.isShowingToast = true
                     } label: {
                         HStack {
                             Image(systemName: "clock")
-                            Text("\(Date().fromUnix(from: time).getRelativeTime(from: Date()))")
+                            Text("\(Date.fromUnix(from: time).getRelativeTime(from: Date()))")
                         }
                     }
                     .foregroundColor(.primary)

@@ -8,14 +8,14 @@
 import Foundation
 
 extension Date {
-    func fromUnix(from ts: Int) -> Date {
+    static func fromUnix(from ts: Int) -> Date {
         return Date(timeIntervalSince1970: TimeInterval(ts))
     }
 
-    func format(showTime: Bool = true) -> String {
+    func format(dateStyle: DateFormatter.Style = .long, timeStyle: DateFormatter.Style = .long) -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .long
-        dateFormatter.timeStyle = showTime ? .long : .none
+        dateFormatter.dateStyle = dateStyle
+        dateFormatter.timeStyle = timeStyle
         return dateFormatter.string(from: self)
     }
 
