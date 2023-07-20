@@ -12,10 +12,10 @@ extension Date {
         return Date(timeIntervalSince1970: TimeInterval(ts))
     }
 
-    func format() -> String {
+    func format(showTime: Bool = true) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .long
-        dateFormatter.timeStyle = .long
+        dateFormatter.timeStyle = showTime ? .long : .none
         return dateFormatter.string(from: self)
     }
 
