@@ -13,15 +13,22 @@ struct StoriesView: View {
 
     var body: some View {
         NavigationStack {
-            List {
-                if let stories = vm.stories {
-                    ForEach(stories, id: \.self) { id in
-                        ItemView(id: id)
+            ScrollView(showsIndicators: false) {
+                LazyVStack(spacing: 0) {
+                    if let stories = vm.stories {
+                        ForEach(stories, id: \.self) { id in
+                            VStack {
+                                ItemView(id: id)
+
+                                if id != stories.last {
+                                    Divider()
+                                }
+                            }
+                        }
                     }
                 }
             }
             .navigationTitle(title)
-            .listStyle(.plain)
         }
         .task {
             vm.fetchStories()
