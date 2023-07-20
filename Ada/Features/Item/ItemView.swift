@@ -23,27 +23,29 @@ struct ItemView: View {
     @ViewBuilder
     var itemView: some View {
         VStack(alignment: .leading, spacing: 10) {
-            if let url = URL(string: vm.item?.url ?? "") {
-                HStack {
-                    Link(destination: url) {
-                        Label(url.host() ?? "error_no_host", systemImage: "link")
-                            .font(.footnote)
-                            .foregroundColor(.blue)
+            if let item = vm.item {
+                if let url = URL(string: item.url ?? "") {
+                    HStack {
+                        Link(destination: url) {
+                            Label(url.host() ?? "error_no_host", systemImage: "link")
+                                .font(.footnote)
+                                .foregroundColor(.blue)
+                        }
                     }
                 }
-            }
 
-            if let title = vm.item?.title {
-                Text(title)
-                    .font(.headline)
-            }
+                if let title = item.title {
+                    Text(title)
+                        .font(.headline)
+                        .multilineTextAlignment(.leading)
+                        .foregroundColor(.primary)
+                }
 
-            if let by = vm.item?.by {
-                UserLabelView(id: by)
-            }
+                if let by = item.by {
+                    UserLabelView(id: by)
+                }
 
-            if vm.item != nil {
-                ItemActionsView(item: vm.item)
+                ItemActionsView(item: item)
             }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
