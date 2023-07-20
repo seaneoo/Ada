@@ -31,9 +31,15 @@ struct UserView: View {
                 Label("\(Date().fromUnix(from: user.created).format(showTime: false))", systemImage: "calendar")
 
                 NavigationLink {
-                    Text("Coming soon! 😀")
+                    UserSubmissionsView(user: user)
                 } label: {
                     Label("Submissions", systemImage: "book")
+                }
+
+                if let about = user.about {
+                    Section("About") {
+                        Text(about)
+                    }
                 }
             }
             .listStyle(.plain)

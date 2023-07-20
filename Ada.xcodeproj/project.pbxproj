@@ -28,6 +28,7 @@
 		14BC530C2A5CB6610057CFB7 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BC530B2A5CB6610057CFB7 /* Item.swift */; };
 		14BC53102A5CC3750057CFB7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BC530F2A5CC3750057CFB7 /* User.swift */; };
 		14BC53122A5CC8EE0057CFB7 /* HackerNewsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BC53112A5CC8EE0057CFB7 /* HackerNewsAPI.swift */; };
+		14C9E0812A69E38500791DE9 /* UserSubmissionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C9E0802A69E38500791DE9 /* UserSubmissionsView.swift */; };
 		14E85E452A675A8300CC8F52 /* UserLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E85E442A675A8300CC8F52 /* UserLabelView.swift */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 		14BC530B2A5CB6610057CFB7 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		14BC530F2A5CC3750057CFB7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		14BC53112A5CC8EE0057CFB7 /* HackerNewsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackerNewsAPI.swift; sourceTree = "<group>"; };
+		14C9E0802A69E38500791DE9 /* UserSubmissionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSubmissionsView.swift; sourceTree = "<group>"; };
 		14E85E442A675A8300CC8F52 /* UserLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLabelView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -167,6 +169,7 @@
 		14E85E432A675A7600CC8F52 /* User */ = {
 			isa = PBXGroup;
 			children = (
+				14C9E0802A69E38500791DE9 /* UserSubmissionsView.swift */,
 				14E85E442A675A8300CC8F52 /* UserLabelView.swift */,
 				14A6BB0E2A676B2E0011EF15 /* UserViewModel.swift */,
 				14A6BB102A676B9D0011EF15 /* UserView.swift */,
@@ -269,6 +272,7 @@
 				14BC53082A5CB09C0057CFB7 /* APIService.swift in Sources */,
 				14A6BB112A676B9D0011EF15 /* UserView.swift in Sources */,
 				1485CE582A60C62400A4EFF9 /* ItemViewModel.swift in Sources */,
+				14C9E0812A69E38500791DE9 /* UserSubmissionsView.swift in Sources */,
 				14BC530C2A5CB6610057CFB7 /* Item.swift in Sources */,
 				140B7C3A2A65EA600085FE77 /* ItemActionsView.swift in Sources */,
 			);
