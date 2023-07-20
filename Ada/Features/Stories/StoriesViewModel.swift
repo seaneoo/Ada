@@ -16,7 +16,8 @@ import Foundation
             switch result {
             case let .success(stories):
                 DispatchQueue.main.async {
-                    self?.stories = Array(stories.prefix(20))
+//                    self?.stories = Array(stories.prefix(20))
+                    self?.stories = stories
                     self?.error = nil
                 }
             case let .failure(error):
