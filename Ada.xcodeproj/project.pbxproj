@@ -23,7 +23,6 @@
 		149E8DD92A65F66000EA5581 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149E8DD82A65F66000EA5581 /* Int.swift */; };
 		14A6BB0F2A676B2E0011EF15 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A6BB0E2A676B2E0011EF15 /* UserViewModel.swift */; };
 		14A6BB112A676B9D0011EF15 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A6BB102A676B9D0011EF15 /* UserView.swift */; };
-		14A6BB142A676EDB0011EF15 /* SkeletonUI in Frameworks */ = {isa = PBXBuildFile; productRef = 14A6BB132A676EDB0011EF15 /* SkeletonUI */; };
 		14BC53082A5CB09C0057CFB7 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BC53072A5CB09C0057CFB7 /* APIService.swift */; };
 		14BC530C2A5CB6610057CFB7 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BC530B2A5CB6610057CFB7 /* Item.swift */; };
 		14BC53102A5CC3750057CFB7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BC530F2A5CC3750057CFB7 /* User.swift */; };
@@ -62,7 +61,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				144F3A012A65FBBD00B60152 /* CachedAsyncImage in Frameworks */,
-				14A6BB142A676EDB0011EF15 /* SkeletonUI in Frameworks */,
 				144F3A072A66001C00B60152 /* AlertToast in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -196,7 +194,6 @@
 			packageProductDependencies = (
 				144F3A002A65FBBD00B60152 /* CachedAsyncImage */,
 				144F3A062A66001C00B60152 /* AlertToast */,
-				14A6BB132A676EDB0011EF15 /* SkeletonUI */,
 			);
 			productName = Ada;
 			productReference = 148FC6682A5C79070049C211 /* Ada.app */;
@@ -229,7 +226,6 @@
 			packageReferences = (
 				144F39FF2A65FBBD00B60152 /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */,
 				144F3A052A66001C00B60152 /* XCRemoteSwiftPackageReference "AlertToast" */,
-				14A6BB122A676EDB0011EF15 /* XCRemoteSwiftPackageReference "SkeletonUI" */,
 			);
 			productRefGroup = 148FC6692A5C79070049C211 /* Products */;
 			projectDirPath = "";
@@ -499,14 +495,6 @@
 				minimumVersion = 1.0.0;
 			};
 		};
-		14A6BB122A676EDB0011EF15 /* XCRemoteSwiftPackageReference "SkeletonUI" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/CSolanaM/SkeletonUI";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -519,11 +507,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 144F3A052A66001C00B60152 /* XCRemoteSwiftPackageReference "AlertToast" */;
 			productName = AlertToast;
-		};
-		14A6BB132A676EDB0011EF15 /* SkeletonUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 14A6BB122A676EDB0011EF15 /* XCRemoteSwiftPackageReference "SkeletonUI" */;
-			productName = SkeletonUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
