@@ -5,7 +5,6 @@
 //  Created by Sean O'Connor on 7/13/23.
 //
 
-import CachedAsyncImage
 import SwiftUI
 
 struct ItemView: View {
@@ -14,37 +13,41 @@ struct ItemView: View {
     @StateObject private var vm = ItemViewModel()
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            if let item = vm.item {
-                if let url = URL(string: item.url ?? "") {
-                    HStack {
-                        CachedAsyncImage(url: URL(string: "https://www.google.com/s2/favicons?domain=\(url.host() ?? "")"))
-                            .frame(width: 15, height: 15)
-
-                        Text(url.host() ?? "error_no_host")
-                            .font(.footnote)
-                    }
-                }
-
-                if let title = item.title {
-                    Text(title)
-                        .font(.headline)
-                }
-
-                if let by = item.by {
-                    HStack {
-                        Image(systemName: "person.circle")
-                        Text(by)
-                    }
-                }
-
-                ItemActionsView(item: item)
-            } else {
-                ProgressView()
-            }
+        VStack {
+            itemView
         }.task {
             vm.fetchItem(id: id)
         }
+    }
+
+    @ViewBuilder
+    var itemView: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            if let url = URL(string: vm.item?.url ?? "") {
+                HStack {
+                    Link(destination: url) {
+                        Label(url.host() ?? "error_no_host", systemImage: "link")
+                            .font(.footnote)
+                            .foregroundColor(.blue)
+                    }
+                }
+            }
+
+            if let title = vm.item?.title {
+                Text(title)
+                    .font(.headline)
+            }
+
+            if let by = vm.item?.by {
+                UserLabelView(id: by)
+            }
+
+            if vm.item != nil {
+                ItemActionsView(item: vm.item)
+            }
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(10)
     }
 }
 
