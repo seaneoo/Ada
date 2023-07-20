@@ -11,12 +11,11 @@ import Foundation
     @Published public var stories: [Int]?
     @Published public var error: Error?
 
-    func fetchStories() {
-        HackerNewsAPI.shared.getStories { [weak self] result in
+    func fetchStories(category: HackerNewsAPI.StoriesCategory) {
+        HackerNewsAPI.shared.getStories(category: category) { [weak self] result in
             switch result {
             case let .success(stories):
                 DispatchQueue.main.async {
-//                    self?.stories = Array(stories.prefix(20))
                     self?.stories = stories
                     self?.error = nil
                 }

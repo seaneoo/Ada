@@ -49,6 +49,6 @@ struct ItemActionsView: View {
 
 struct ItemActionsView_Previews: PreviewProvider {
     static var previews: some View {
-        ItemActionsView(item: Item.Preview)
+        ItemActionsView(item: Item.storyStub())
     }
 }

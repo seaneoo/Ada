@@ -7,12 +7,6 @@
 
 import Foundation
 
-enum APIServiceError: Error {
-    case url(error: String)
-    case response(error: String)
-    case decoding(error: String)
-}
-
 class APIService {
     let session: URLSession
     let decoder: JSONDecoder
@@ -48,5 +42,13 @@ class APIService {
                 }
             }
         }.resume()
+    }
+}
+
+extension APIService {
+    enum APIServiceError: Error {
+        case url(error: String)
+        case response(error: String)
+        case decoding(error: String)
     }
 }

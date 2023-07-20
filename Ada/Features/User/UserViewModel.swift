@@ -12,7 +12,7 @@ import Foundation
     @Published public var error: Error?
 
     func fetchUser(id: String) {
-        HackerNewsAPI.shared.getUser(from: id) { [weak self] result in
+        HackerNewsAPI.shared.getUser(id: id) { [weak self] result in
             switch result {
             case let .success(user):
                 DispatchQueue.main.async {

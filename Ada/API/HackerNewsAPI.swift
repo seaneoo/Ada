@@ -18,18 +18,24 @@ class HackerNewsAPI {
 
     typealias Completion<T> = (Result<T, Error>) -> Void
 
-    func getStories(completion: @escaping Completion<[Int]>) {
-        let url = "https://hacker-news.firebaseio.com/v0/topstories.json"
+    func getStories(category: StoriesCategory, completion: @escaping Completion<[Int]>) {
+        let url = "https://hacker-news.firebaseio.com/v0/\(category)stories.json"
         service.perform(for: [Int].self, from: url, completion: completion)
     }
 
-    func getItem(from id: Int, completion: @escaping Completion<Item>) {
+    func getItem(id: Int, completion: @escaping Completion<Item>) {
         let url = "https://hacker-news.firebaseio.com/v0/item/\(id).json"
         service.perform(for: Item.self, from: url, completion: completion)
     }
 
-    func getUser(from id: String, completion: @escaping Completion<User>) {
+    func getUser(id: String, completion: @escaping Completion<User>) {
         let url = "https://hacker-news.firebaseio.com/v0/user/\(id).json"
         service.perform(for: User.self, from: url, completion: completion)
+    }
+}
+
+extension HackerNewsAPI {
+    enum StoriesCategory {
+        case top, best, new
     }
 }

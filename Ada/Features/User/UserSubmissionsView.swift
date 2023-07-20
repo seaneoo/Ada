@@ -33,6 +33,6 @@ struct UserSubmissionsView: View {
 
 struct UserSubmissionsView_Previews: PreviewProvider {
     static var previews: some View {
-        UserSubmissionsView(user: User.Preview)
+        UserSubmissionsView(user: User.stub())
     }
 }

@@ -31,7 +31,7 @@ struct StoriesView: View {
             .navigationTitle(title)
         }
         .task {
-            vm.fetchStories()
+            vm.fetchStories(category: .top)
         }
     }
 }
