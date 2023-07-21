@@ -49,7 +49,8 @@ struct ItemView: View {
             }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
-        .padding(10)
+        .padding([.leading, .trailing], 20)
+        .padding([.top, .bottom], 10)
     }
 }
 
