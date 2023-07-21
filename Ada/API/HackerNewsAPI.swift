@@ -35,7 +35,18 @@ class HackerNewsAPI {
 }
 
 extension HackerNewsAPI {
-    enum StoriesCategory {
+    enum StoriesCategory: String, CaseIterable {
         case top, best, new
+
+        func systemImage() -> String {
+            switch self {
+            case .top:
+                return "chart.line.uptrend.xyaxis"
+            case .best:
+                return "trophy"
+            case .new:
+                return "sunrise"
+            }
+        }
     }
 }

@@ -9,7 +9,6 @@ import SwiftUI
 
 struct StoriesView: View {
     @StateObject private var vm = StoriesViewModel()
-    @State private var title = "Top Stories"
 
     var body: some View {
         NavigationStack {
@@ -28,10 +27,25 @@ struct StoriesView: View {
                     }
                 }
             }
-            .navigationTitle(title)
+            .navigationTitle("\(vm.category.rawValue) stories".capitalized)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Menu {
+                        ForEach(HackerNewsAPI.StoriesCategory.allCases, id: \.rawValue) { cat in
+                            Button {
+                                vm.category = cat
+                            } label: {
+                                Label(cat.rawValue.capitalized, systemImage: cat.systemImage())
+                            }
+                        }
+                    } label: {
+                        Label(vm.category.rawValue.capitalized, systemImage: vm.category.systemImage())
+                    }
+                }
+            }
         }
         .task {
-            vm.fetchStories(category: .top)
+            vm.fetchStories()
         }
     }
 }
