@@ -16,7 +16,7 @@ struct StoriesView: View {
                 LazyVStack(spacing: 0) {
                     if let stories = vm.stories {
                         ForEach(stories, id: \.self) { id in
-                            VStack {
+                            VStack(spacing: 0) {
                                 ItemView(id: id)
 
                                 if id != stories.last {
