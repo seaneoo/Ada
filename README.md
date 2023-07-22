@@ -34,6 +34,15 @@ There are *a lot* of Hacker News apps on the App Store. Despite this, I decided 
 
 This project is primarily a learning experience for me. I have always wanted to build iOS apps and this felt like a great opportunity to learn. However, I also want to build an app that people can use and enjoy. 
 
+## Images
+
+<details>
+  <div float="left">
+    <img src="static/screenshot_ex_1.png" alt="screenshot of Ada showing the home 'feed' page" width="40%">    
+    <img src="static/screenshot_ex_2.png" alt="screenshot of Ada showing a user profile page" width="40%">
+  </div>
+</details>
+
 ## Acknowledgments
 
 ### Open Source Packages
