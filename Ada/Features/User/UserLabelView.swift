@@ -14,8 +14,11 @@ struct UserLabelView: View {
         NavigationLink {
             UserView(id: id)
         } label: {
-            HStack {
+            HStack(spacing: 5) {
                 Image(systemName: "person.circle")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 16, height: 16)
                 Text(id)
             }
         }

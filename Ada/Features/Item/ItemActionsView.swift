@@ -32,9 +32,9 @@ struct ItemActionsView: View {
                     HStack(spacing: 5) {
                         Image(systemName: "arrow.up")
                             .resizable()
-                            .frame(width: 12, height: 12)
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 16, height: 16)
                         Text(score.formatShort())
-                            .font(.subheadline)
                     }
                 }
                 .foregroundColor(.primary)
@@ -49,9 +49,9 @@ struct ItemActionsView: View {
                     HStack(spacing: 5) {
                         Image(systemName: "bubble.left")
                             .resizable()
-                            .frame(width: 12, height: 12)
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 16, height: 16)
                         Text(descendants.formatShort())
-                            .font(.subheadline)
                     }
                 }
                 .foregroundColor(.primary)
@@ -66,9 +66,9 @@ struct ItemActionsView: View {
                     HStack(spacing: 5) {
                         Image(systemName: "clock")
                             .resizable()
-                            .frame(width: 12, height: 12)
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 16, height: 16)
                         Text("\(Date.fromUnix(from: time).getRelativeTime(from: Date()))")
-                            .font(.subheadline)
                     }
                 }
                 .foregroundColor(.primary)
