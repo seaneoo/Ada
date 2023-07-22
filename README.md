@@ -45,6 +45,8 @@ This project is primarily a learning experience for me. I have always wanted to 
 
 ## Acknowledgments
 
+- [Hacker News API](https://github.com/HackerNews/API)
+
 ### Open Source Packages
 
 - [AlertToast](https://github.com/elai950/AlertToast)
